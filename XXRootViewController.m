@@ -8,12 +8,12 @@
 }
 
 static void alert(NSString *format, ...) {
-    va_list args;
-    va_start(args, format);
-    NSString *message = [[NSString alloc] initWithFormat:format arguments:args];  
-    va_end(args);
+	va_list args;
+	va_start(args, format);
+	NSString *message = [[NSString alloc] initWithFormat:format arguments:args];  
+	va_end(args);
 
-    [[[UIAlertView alloc] initWithTitle:nil message:message delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil] show];
+	[[[UIAlertView alloc] initWithTitle:nil message:message delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil] show];
 }
 
 - (void)loadView {
@@ -26,9 +26,9 @@ static void alert(NSString *format, ...) {
 
 - (void)addRightButtonTapped:(id)sender {
 	NSDictionary *message = @{@"Message" : @"Speak any message here...", @"Testing" : [NSNumber numberWithBool:NO]};
-    CPDistributedMessagingCenter *messagingCenter = [objc_getClass("CPDistributedMessagingCenter") centerNamed:@"prasa.chatspeaker"];
-    [messagingCenter sendMessageName:@"speakmessage" userInfo:message];
+	CPDistributedMessagingCenter *messagingCenter = [objc_getClass("CPDistributedMessagingCenter") centerNamed:@"prasa.chatspeaker"];
+	[messagingCenter sendMessageName:@"speakmessage" userInfo:message];
 
-    alert(@"You have pressed [+] button");
+	alert(@"You have pressed [+] button");
 }
 @end
