@@ -1,0 +1,8 @@
+Package: fun.yfyf.testchatspeaker
+Name: testChatSpeaker
+Version: 0.0.1
+Architecture: iphoneos-arm
+Description: An application to test awesome tweak ChatSpeaker.
+Maintainer: EVAN
+Author: EVAN
+Section: Utilities
